@@ -1,10 +1,10 @@
 <script setup>
-import TheNavigation from "./views/TheNavigation.vue";
+import TheNavigation from "./components/TheNavigation.vue";
 </script>
 
 <template>
   <div class="container">
     <TheNavigation></TheNavigation>
-    <RouterView></RouterView>
+    <RouterView :key="$route.path"></RouterView>
   </div>
 </template>
