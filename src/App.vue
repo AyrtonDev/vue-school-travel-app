@@ -6,7 +6,7 @@ import TheNavigation from "./components/TheNavigation.vue";
   <TheNavigation></TheNavigation>
   <div class="container">
     <RouterView v-slot="{ Component }">
-      <Transition name="slide" mode="out-in">
+      <Transition name="fade" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
       </Transition>
     </RouterView>
@@ -14,14 +14,13 @@ import TheNavigation from "./components/TheNavigation.vue";
 </template>
 
 <style>
-.slide-enter-active,
-.slide-leave-active {
-  transition: opacity 1s, transform 1s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
 }
 
-.slide-enter-from,
-.slide-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
-  transform: translateX(-30%);
 }
 </style>
